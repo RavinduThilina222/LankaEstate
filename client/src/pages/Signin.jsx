@@ -5,7 +5,7 @@ import { SignInStart,SignInSuccess,SignInFailure } from '../redux/user/userSlice
 
 export default function SignIn() {
   const[formData, setFormData] = useState({});
-  const {loading, error} = useSelector(state => state.User);
+  const {loading, error} = useSelector(state => state.user);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -52,7 +52,7 @@ export default function SignIn() {
         className='border p-3 rounded-lg' id='password'onChange={handleChange}/>
         <button className='bg-slate-700 text-white p-3 rounded-lg uppercase'
         onClick={handleSubmit}
-        disabled={loading}>{loading? 'loading...': 'Sign Up'}</button>
+        disabled={loading}>{loading? 'loading...': 'Sign In'}</button>
 
         <div className='flex gap-2 mt-5'>
           <p>Don't have an account?</p>
