@@ -31,7 +31,8 @@ export default function Header() {
           </Link>
           {currentUser ? (
             <li className='avatarContainer'>
-              <img className='avatar' src={currentUser.avatar} alt="profile" />
+              <img className='avatar w-10 h-10 rounded-full object-cover border-2 border-gray-300' src={currentUser.avatar}  
+              />
             </li>
           ) : (
             <Link to='/sign-in'>

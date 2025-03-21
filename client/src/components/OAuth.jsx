@@ -27,7 +27,7 @@ export default function OAuth() {
         body: JSON.stringify({
           name: result.user.displayName,
           email: result.user.email,
-          avatar: result.user.photoURL
+          photo: result.user.photoURL
         }),
       })
 
@@ -38,11 +38,14 @@ export default function OAuth() {
       }
 
       const data = await res.json()
-      console.log('User data:', data); // Debugging line
       dispatch(SignInSuccess(data))
+
+
 
       // Redirect to /home after successful sign-in
       navigate('/home')
+
+      console.log(data)
     } catch (error) {
       console.error('Could not sign in with Google', error)
     }
